@@ -1,147 +1,152 @@
-<div class="flex flex-col justify-center items-center lg:justify-evenly lg:flex-row lg:items-center w-full mt-2 min-h-64"> 
-    <canvas class="max-w-[100%] max-h-56 lg:max-h-52 lg:max-w-[60%] p-4" id="firstChart"></canvas>
+<div class="mx-10">
+    <div
+        class="flex flex-col justify-center items-center lg:justify-evenly lg:flex-row lg:items-center w-full mt-2 min-h-64">
+        <canvas class="max-w-[100%] max-h-56 lg:max-h-52 lg:max-w-[60%] p-4" id="firstChart"></canvas>
 
-    <div class="dustbin-container">
-        <img class="w-40 dustbin-img" style="background-image: linear-gradient(to bottom,white 40%,red 0%);" src="assets/dustbin.png" alt="">
+        <div class="dustbin-container mb-4">
+            <img class="w-40 dustbin-img" style="background-image: linear-gradient(to bottom,white 40%,red 0%);"
+                src="assets/dustbin.png" alt="">
+        </div>
+        <!-- style="background-image: linear-gradient(to bottom,red 40%,blue 0%);" -->
+        <div class="plant-container">
+            <img class="w-56 plant-img" style="background-image: linear-gradient(to bottom,red 30%,green 0%);"
+                src="assets/plant.png" alt="">
+        </div>
     </div>
-    <!-- style="background-image: linear-gradient(to bottom,red 40%,blue 0%);" -->
-    <div class="plant-container">
-        <img class="w-56 plant-img" style="background-image: linear-gradient(to bottom,red 30%,green 0%);" src="assets/plant.png"  alt="">
+
+    <!-- First Section -->
+    <div class="grid grid-cols-12">
+        <!-- Light Section -->
+        <div class="col-span-12  bg-gray-200 mt-2 lg:col-span-6 gap-4 p-4">
+            <div class="bg-lime-500 col-span-1 flex items-center justify-center">
+                <div class="vertical-text text-white text-xl font-bold vertical-text">Lights</div>
+            </div>
+            <div class="col-span-4 grid grid-cols-2 sm:grid-cols-4 lg:col-span-11 lg:grid lg:grid-cols-6 gap-4 mt-2">
+                <div class="bg-white shadow rounded p-4" *ngFor="let light of lights">
+                    <div class="flex items-center justify-between mb-2">
+                        <div>
+                            <p class="font-semibold">{{light.name}}</p>
+                        </div>
+                        <div class="text-green-500">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" fill="currentColor">
+                                <circle cx="10" cy="10" r="10" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fans Section -->
+        <div class="col-span-12 bg-gray-200 mt-2 lg:col-span-6 lg:ms-2 gap-4 p-4">
+            <div class="bg-blue-500 col-span-1 flex items-center justify-center">
+                <div class="vertical-text text-white text-xl font-bold vertical-text">Fans</div>
+            </div>
+            <div class="col-span-4 grid grid-cols-2 sm:grid-cols-4 lg:col-span-11 lg:grid lg:grid-cols-6 mt-2  gap-4">
+                <div class="bg-white shadow rounded p-4" *ngFor="let fan of fans">
+                    <div class="flex items-center justify-between mb-2">
+                        <div>
+                            <p class="font-semibold">{{fan.name}}</p>
+                        </div>
+                        <div class="text-green-500">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" fill="currentColor">
+                                <circle cx="10" cy="10" r="10" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Second Section -->
+    <div class="grid grid-cols-12">
+        <!-- Entry Section -->
+        <div class="col-span-12 bg-gray-200 mt-2 lg:col-span-4 gap-4 p-4">
+            <div class="bg-orange-500 col-span-1 flex items-center justify-center">
+                <div class="vertical-text text-white text-xl font-bold vertical-text">Entry</div>
+            </div>
+            <div class="gap-4 grid grid-cols-2 mt-2">
+                <div class="bg-white shadow rounded p-4" *ngFor="let door of doors">
+                    <div class="flex items-center justify-between mb-2">
+                        <div>
+                            <p class="font-semibold">{{door.name}}</p>
+                        </div>
+                        <div class="text-green-500">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" fill="currentColor">
+                                <circle cx="10" cy="10" r="10" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projecter Section -->
+        <div class="col-span-12 sm:col-span-6 bg-gray-200 mt-2 lg:col-span-4 gap-4 p-4 lg:ms-2">
+            <div class="bg-teal-500 col-span-1 flex items-center justify-center">
+                <div class="vertical-text text-white text-xl font-bold vertical-text">Projecter</div>
+            </div>
+            <div class="col-span-12 mt-2 gap-4">
+                <div class="bg-white shadow rounded p-4" *ngFor="let pjr of projecter">
+                    <div class="flex items-center justify-between mb-2">
+                        <div>
+                            <p class="font-semibold">{{pjr.name}}</p>
+                        </div>
+                        <div class="text-green-500">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" fill="currentColor">
+                                <circle cx="10" cy="10" r="10" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AC Section -->
+        <div class="col-span-12 sm:col-span-6 bg-gray-200 mt-2 lg:col-span-4 gap-4 p-4 sm:ms-2">
+            <div class="bg-yellow-500 col-span-1 flex items-center justify-center">
+                <div class="vertical-text text-white text-xl font-bold vertical-text">AC</div>
+            </div>
+            <div class="col-span-12 mt-2 gap-4">
+                <div class="bg-white shadow rounded p-4" *ngFor="let ac of AC">
+                    <div class="flex items-center justify-between mb-2">
+                        <div>
+                            <p class="font-semibold">{{ac.name}}</p>
+                        </div>
+                        <div class="text-green-500">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" fill="currentColor">
+                                <circle cx="10" cy="10" r="10" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Third Section -->
+    <div class=" bg-gray-200 mt-2 grid grid-cols-12 gap-4 p-4">
+        <div class="bg-fuchsia-500 col-span-12 flex items-center justify-center lg:col-span-1">
+            <div class="vertical-text text-white text-xl font-bold vertical-text">Plugs</div>
+        </div>
+        <div class="col-span-12 grid grid-cols-2 sm:grid-cols-3 lg:col-span-11 lg:grid lg:grid-cols-10 gap-4">
+            <div class="bg-white shadow rounded p-4" *ngFor="let plug of plugs">
+                <div class="flex items-center justify-between mb-2">
+                    <div>
+                        <p class="font-semibold">{{plug.name}}</p>
+                    </div>
+                    <div class="text-green-500">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" fill="currentColor">
+                            <circle cx="10" cy="10" r="10" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Image Section -->
 </div>
-
-<!-- First Section -->
-<div class="grid grid-cols-12">
-    <!-- Light Section -->
-    <div class="col-span-12  bg-gray-200 mt-2 lg:col-span-6 gap-4 p-4">
-        <div class="bg-lime-500 col-span-1 flex items-center justify-center">
-            <div class="vertical-text text-white text-xl font-bold vertical-text">Lights</div>
-        </div>
-        <div class="col-span-4 grid grid-cols-2 sm:grid-cols-4 lg:col-span-11 lg:grid lg:grid-cols-6 gap-4 mt-2">
-            <div class="bg-white shadow rounded p-4" *ngFor="let light of lights">
-                <div class="flex items-center justify-between mb-2">
-                    <div>
-                        <p class="font-semibold">{{light.name}}</p>
-                    </div>
-                    <div class="text-green-500">
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" fill="currentColor">
-                            <circle cx="10" cy="10" r="10"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Fans Section -->
-    <div class="col-span-12 bg-gray-200 mt-2 lg:col-span-6 lg:ms-2 gap-4 p-4">
-        <div class="bg-blue-500 col-span-1 flex items-center justify-center">
-            <div class="vertical-text text-white text-xl font-bold vertical-text">Fans</div>
-        </div>
-        <div class="col-span-4 grid grid-cols-2 sm:grid-cols-4 lg:col-span-11 lg:grid lg:grid-cols-6 mt-2  gap-4">
-            <div class="bg-white shadow rounded p-4" *ngFor="let fan of fans">
-                <div class="flex items-center justify-between mb-2">
-                    <div>
-                        <p class="font-semibold">{{fan.name}}</p>
-                    </div>
-                    <div class="text-green-500">
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" fill="currentColor">
-                            <circle cx="10" cy="10" r="10"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Second Section -->
-<div class="grid grid-cols-12">
-    <!-- Entry Section -->
-    <div class="col-span-12 bg-gray-200 mt-2 lg:col-span-4 gap-4 p-4">
-        <div class="bg-orange-500 col-span-1 flex items-center justify-center">
-            <div class="vertical-text text-white text-xl font-bold vertical-text">Entry</div>
-        </div>
-        <div class="gap-4 grid grid-cols-2 mt-2">
-            <div class="bg-white shadow rounded p-4" *ngFor="let door of doors">
-                <div class="flex items-center justify-between mb-2">
-                    <div>
-                        <p class="font-semibold">{{door.name}}</p>
-                    </div>
-                    <div class="text-green-500">
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" fill="currentColor">
-                            <circle cx="10" cy="10" r="10"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Projecter Section -->
-    <div class="col-span-12 sm:col-span-6 bg-gray-200 mt-2 lg:col-span-4 gap-4 p-4 lg:ms-2">
-        <div class="bg-teal-500 col-span-1 flex items-center justify-center">
-            <div class="vertical-text text-white text-xl font-bold vertical-text">Projecter</div>
-        </div>
-        <div class="col-span-12 mt-2 gap-4">
-            <div class="bg-white shadow rounded p-4" *ngFor="let pjr of projecter">
-                <div class="flex items-center justify-between mb-2">
-                    <div>
-                        <p class="font-semibold">{{pjr.name}}</p>
-                    </div>
-                    <div class="text-green-500">
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" fill="currentColor">
-                            <circle cx="10" cy="10" r="10"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- AC Section -->
-    <div class="col-span-12 sm:col-span-6 bg-gray-200 mt-2 lg:col-span-4 gap-4 p-4 sm:ms-2">
-        <div class="bg-yellow-500 col-span-1 flex items-center justify-center">
-            <div class="vertical-text text-white text-xl font-bold vertical-text">AC</div>
-        </div>
-        <div class="col-span-12 mt-2 gap-4">
-            <div class="bg-white shadow rounded p-4" *ngFor="let ac of AC">
-                <div class="flex items-center justify-between mb-2">
-                    <div>
-                        <p class="font-semibold">{{ac.name}}</p>
-                    </div>
-                    <div class="text-green-500">
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" fill="currentColor">
-                            <circle cx="10" cy="10" r="10"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Third Section -->
-<div class=" bg-gray-200 mt-2 grid grid-cols-12 gap-4 p-4">
-    <div class="bg-fuchsia-500 col-span-12 flex items-center justify-center lg:col-span-1">
-        <div class="vertical-text text-white text-xl font-bold vertical-text">Plugs</div>
-    </div>
-    <div class="col-span-12 grid grid-cols-2 sm:grid-cols-3 lg:col-span-11 lg:grid lg:grid-cols-10 gap-4">
-        <div class="bg-white shadow rounded p-4" *ngFor="let plug of plugs">
-            <div class="flex items-center justify-between mb-2">
-                <div>
-                    <p class="font-semibold">{{plug.name}}</p>
-                </div>
-                <div class="text-green-500">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" fill="currentColor">
-                        <circle cx="10" cy="10" r="10"/>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Image Section -->
 
 
 <!-- <div class="flex items-start w-full ">
